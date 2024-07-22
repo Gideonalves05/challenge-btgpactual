@@ -1,5 +1,8 @@
 package com.gideon.btgpactual.entity;
 
+import org.springframework.data.mongodb.core.mapping.Field;
+import org.springframework.data.mongodb.core.mapping.FieldType;
+
 import java.math.BigDecimal;
 
 public class OrderItem {
@@ -8,6 +11,7 @@ public class OrderItem {
 
     private Integer quantity;
 
+    @Field(targetType = FieldType.DECIMAL128)
     private BigDecimal price;
 
     public OrderItem() {
