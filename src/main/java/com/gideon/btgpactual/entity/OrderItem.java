@@ -8,16 +8,18 @@ import java.math.BigDecimal;
 public class OrderItem {
 
     private String product;
-
     private Integer quantity;
 
     @Field(targetType = FieldType.DECIMAL128)
     private BigDecimal price;
 
-    public OrderItem(String produto, Integer quantidade, BigDecimal preco) {
-        this.product = produto;
-        this.quantity = quantidade;
-        this.price = preco;
+    public OrderItem() {
+    }
+
+    public OrderItem(String product, Integer quantity, BigDecimal price) {
+        this.product = product;
+        this.quantity = quantity;
+        this.price = price;
     }
 
     public String getProduct() {

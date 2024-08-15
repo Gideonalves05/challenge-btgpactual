@@ -1,6 +1,5 @@
 package com.gideon.btgpactual.entity;
 
-
 import org.springframework.data.mongodb.core.index.Indexed;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.core.mapping.Field;
@@ -17,7 +16,7 @@ public class OrderEntity {
     private Long orderId;
 
     @Indexed(name = "customer_id_index")
-    private Long costumerId;
+    private Long customerId;
 
     @Field(targetType = FieldType.DECIMAL128)
     private BigDecimal total;
@@ -27,12 +26,20 @@ public class OrderEntity {
     public OrderEntity() {
     }
 
-    public List<OrderItem> getItems() {
-        return items;
+    public Long getOrderId() {
+        return orderId;
     }
 
-    public void setItems(List<OrderItem> items) {
-        this.items = items;
+    public void setOrderId(Long orderId) {
+        this.orderId = orderId;
+    }
+
+    public Long getCustomerId() {
+        return customerId;
+    }
+
+    public void setCustomerId(Long customerId) {
+        this.customerId = customerId;
     }
 
     public BigDecimal getTotal() {
@@ -43,19 +50,11 @@ public class OrderEntity {
         this.total = total;
     }
 
-    public Long getCostumerId() {
-        return costumerId;
+    public List<OrderItem> getItems() {
+        return items;
     }
 
-    public void setCostumerId(Long costumerId) {
-        this.costumerId = costumerId;
-    }
-
-    public Long getOrderId() {
-        return orderId;
-    }
-
-    public void setOrderId(Long orderId) {
-        this.orderId = orderId;
+    public void setItems(List<OrderItem> items) {
+        this.items = items;
     }
 }
